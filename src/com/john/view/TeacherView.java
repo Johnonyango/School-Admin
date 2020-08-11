@@ -59,7 +59,6 @@ public class TeacherView implements TeacherViewI {
     }
 
     private void show() throws SQLException{
-        System.out.println("List of students from the DB");
         List<Teacher> teachers = teacherLogic.findAll();
         Iterator iterator = teachers.iterator();
         while(iterator.hasNext()){
@@ -85,7 +84,7 @@ public class TeacherView implements TeacherViewI {
     public void teacherMenu() throws SQLException {
         int option;
         do {
-            System.out.println("Welcome to Student Module. \n" +
+            System.out.println("Welcome to Teacher's Module. \n" +
                     "Please select an option: \n" +
                     "1. Assign a teacher \n" +
                     "2. Update teacher details \n" +
