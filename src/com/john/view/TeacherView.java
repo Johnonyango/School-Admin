@@ -36,6 +36,30 @@ public class TeacherView implements TeacherViewI {
         if (choice == 1)
             teacherLogic.add(teacher);
     }
+    private void updateTeacher() throws SQLException{
+        Teacher teacher = new Teacher();
+
+        System.out.println("Enter staff Number of the teacher :");
+        teacher.setStaffNo(scanner.nextLine());
+
+        System.out.println("Enter name:");
+        teacher.setName(scanner.nextLine());
+
+        System.out.println("Enter course:");
+        teacher.setCourse(scanner.nextLine());
+
+        System.out.println("Enter ID #:");
+        teacher.setId(scanner.nextLong());
+
+        System.out.println("You are about to update a teacher with the following details: " +
+                ":\n" + teacher.toStringRow()
+                + "\n1. Yes\n2. No");
+        int choice = scanner.nextInt();
+        if(choice == 1)
+            teacherLogic.update(teacher);
+        System.out.println("Successfully updated");
+    }
+
     private void show() throws SQLException{
         System.out.println("List of students from the DB");
         List<Teacher> teachers = teacherLogic.findAll();
@@ -63,7 +87,7 @@ public class TeacherView implements TeacherViewI {
                     this.assignTeacher();
                     break;
                 case 2:
-                    // edit();
+                    this.updateTeacher();
                     break;
                 case 3:
                     // delete();

@@ -60,7 +60,6 @@ public class StudentView implements StudentViewI {
         if(choice == 1)
             studentLogicI.update(student);
         System.out.println("Successfully updated");
-
     }
 
     private void deleteStudent() throws SQLException{
