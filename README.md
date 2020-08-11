@@ -1,0 +1,1 @@
+A Java program that: 1. Manages a list of teachers 2. Manage a list of teachers corresponding to their respective courses 3. Manage results for each of the students (per subject, and the teachers for  4. Updates teachers and student database. 5.Retrieves and deletes data from the database.
