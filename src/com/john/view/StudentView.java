@@ -43,6 +43,39 @@ public class StudentView implements StudentViewI {
         }
     }
 
+    private void updateStudent() throws SQLException{
+        Student student = new Student();
+        System.out.println("Please Enter Registration Number of student to edit details:");
+        student.setRegistrationNo(scanner.nextLine());
+        System.out.println("Edit the student Details:");
+        System.out.println("Enter name:");
+        student.setName(scanner.nextLine());
+        System.out.println("Enter course:");
+        student.setCourse(scanner.nextLine());
+        System.out.println("Enter ID #:");
+        student.setIdNumber(scanner.nextLine());
+        System.out.println("Are you sure you want to update the student with the following details:\n" + student.toStringRow()
+                + "\n1. Yes\n2. No");
+        int choice = scanner.nextInt();
+        if(choice == 1)
+            studentLogicI.update(student);
+        System.out.println("Successfully updated");
+
+    }
+
+    private void deleteStudent() throws SQLException{
+        Student student = new Student();
+        System.out.println("Registration Number: ");
+        student.setRegistrationNo(scanner.nextLine());
+        System.out.println("You are about to delete student with registration Number:"
+                +student.getRegistrationNo() + "\nContinue?\n1. Yes\n2. No");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+        if(choice == 1)
+            studentLogicI.delete(student);
+        System.out.println("Student Record Successfully Deleted... ");
+    }
+
     @Override
     public void studentMenu() throws SQLException {
         int option;
@@ -61,10 +94,10 @@ public class StudentView implements StudentViewI {
                     this.register();
                     break;
                 case 2:
-                    // edit();
+                     this.updateStudent();
                     break;
                 case 3:
-                    // delete();
+                    this.deleteStudent();
                     break;
                 case 4:
                     this.show();
