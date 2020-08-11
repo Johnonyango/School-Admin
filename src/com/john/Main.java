@@ -19,14 +19,11 @@ public class Main {
             scanner.nextLine();
             switch (option) {
                 case 1:
+                    teacherView.teacherMenu();
                     break;
                 case 2:
                     studentView.studentMenu();
                     break;
-                case 3:
-                    teacherView.teacherMenu();
-                case 4:
-
             }
         } while (option != 3);
     }
