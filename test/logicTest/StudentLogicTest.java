@@ -13,7 +13,6 @@ public class StudentLogicTest {
     public StudentLogicTest() throws SQLException, ClassNotFoundException {
         studentLogicI = new StudentLogic();
     }
-
     @org.junit.Test
     public void add() throws SQLException {
         Student student = new Student();
