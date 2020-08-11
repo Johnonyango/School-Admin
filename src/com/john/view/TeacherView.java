@@ -1,9 +1,7 @@
 package com.john.view;
 
-import com.john.logic.StudentLogic;
-import com.john.logic.StudentLogicI;
+
 import com.john.logic.TeacherLogic;
-import com.john.model.Student;
 import com.john.model.Teacher;
 
 import java.sql.SQLException;
@@ -69,6 +67,20 @@ public class TeacherView implements TeacherViewI {
         }
     }
 
+    private void deleteTeacher() throws SQLException{
+        Teacher teacher = new Teacher();
+        System.out.println("Registration Number: ");
+        teacher.setStaffNo(scanner.nextLine());
+        System.out.println("You are about to delete a teacher with staff number :"
+                +teacher.getStaffNo() + "\nContinue?\n1. Yes\n2. No");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+        if(choice == 1)
+            teacherLogic.delete(teacher);
+        System.out.println("Teacher deleted");
+    }
+
+
     @Override
     public void teacherMenu() throws SQLException {
         int option;
@@ -90,7 +102,7 @@ public class TeacherView implements TeacherViewI {
                     this.updateTeacher();
                     break;
                 case 3:
-                    // delete();
+                    this.deleteTeacher();
                     break;
                 case 4:
                     this.show();
