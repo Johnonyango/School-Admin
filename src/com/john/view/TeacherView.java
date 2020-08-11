@@ -87,10 +87,10 @@ public class TeacherView implements TeacherViewI {
         do {
             System.out.println("Welcome to Student Module. \n" +
                     "Please select an option: \n" +
-                    "1. Register a student \n" +
-                    "2. Edit a student \n" +
-                    "3. Delete a student \n" +
-                    "4. Show list of students \n" +
+                    "1. Assign a teacher \n" +
+                    "2. Update teacher details \n" +
+                    "3. Delete a teacher \n" +
+                    "4. Show teachers \n" +
                     "0. Back to main menu \n");
             option = scanner.nextInt();
             scanner.nextLine();
