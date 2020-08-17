@@ -1,6 +1,5 @@
 package com.john;
 
-import com.john.model.Teacher;
 import com.john.view.StudentView;
 import com.john.view.TeacherView;
 

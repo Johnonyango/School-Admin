@@ -9,9 +9,9 @@ public class DbConnection implements DbConnectionI {
     private Connection connection;
 
     public DbConnection() throws SQLException, ClassNotFoundException {
-        this.url = "jdbc:mysql://localhost:3306/school?useSSL=false";
+        this.url = "jdbc:mysql://localhost:6660/scool?useSSL=false";
         this.username = "root";
-        this.password = "password";
+        this.password = "";
         this.connect();
     }
 
